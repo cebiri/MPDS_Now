@@ -65,7 +65,7 @@ describe('Nav', () => {
   it('renders all nav items', () => {
     render(<Nav {...DEFAULT_PROPS} />)
     const result1 = screen.getByText(/Foobar1/)
-    const result2 = screen.getByText(/Foobar1/)
+    const result2 = screen.getByText(/Foobar2/)
     const result3 = screen.getByText(/Foobar3/)
     expect(result1).toBeTruthy()
     expect(result2).toBeTruthy()
