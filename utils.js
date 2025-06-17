@@ -43,8 +43,10 @@ function findMd(input) {
 
 exports.extractInlineImages = (node) => {
   const { rawMarkdownBody: html } = node
-  const mdKeys = node.frontmatter && node.frontmatter ? _.flatMapDeep(findMd(node.frontmatter), (i) => i).filter((i) => i) : null
-  if (!mdKeys && !html) {
+  const mdKeys = node.frontmatter
+    ? _.flatMapDeep(findMd(node.frontmatter), (i) => i).filter((i) => i)
+    : []
+  if (!mdKeys.length && !html) {
     return []
   }
   const regex = new RegExp(/(\/img\/.+\.(jp(e)?g|png))/gm)
