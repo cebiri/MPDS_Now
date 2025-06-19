@@ -1,6 +1,6 @@
 import { toHTML, findImgPath } from '../utils'
 
-describe('toHMTL', () => {
+describe('toHTML', () => {
   it('takes a markdown string and creates html', () => {
     expect(toHTML('## foobar')).toBe('<h2>foobar</h2>\n')
   })
